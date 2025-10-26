@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Feedback Report - Imperial College</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand-wrap">
+                <h1 class="brand">Imperial College of Engineering</h1>
+                <div class="subtitle">Online Feedback System</div>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Feedback</a>
+                <a href="admin.html" class="nav-link">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-area">
+        <section class="card">
+            <h2 class="card-title">Feedback Report (Dummy Data)</h2>
+            <p class="muted">This page shows sample feedback entries for the admin panel mockup.</p>
+
+            <div class="table-wrap">
+                <table class="datatable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Student</th>
+                            <th>Enroll</th>
+                            <th>Course</th>
+                            <th>OS (E/C/P)</th>
+                            <th>DBMS (E/C/P)</th>
+                            <th>AI (E/C/P)</th>
+                            <th>ML (E/C/P)</th>
+                            <th>Math (E/C/P)</th>
+                            <th>Comments</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Aarti Singh</td>
+                            <td>IC2023001</td>
+                            <td>B.Tech (CSE)</td>
+                            <td>4 / 4 / 5</td>
+                            <td>3 / 3 / 4</td>
+                            <td>4 / 4 / 4</td>
+                            <td>5 / 5 / 5</td>
+                            <td>4 / 4 / 4</td>
+                            <td>Good mix of theory and practical.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Ravi Kumar</td>
+                            <td>IC2023002</td>
+                            <td>B.Tech (CSE)</td>
+                            <td>3 / 3 / 3</td>
+                            <td>4 / 4 / 3</td>
+                            <td>2 / 2 / 3</td>
+                            <td>3 / 3 / 2</td>
+                            <td>4 / 4 / 5</td>
+                            <td>Need more assignments in AI.</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Meera Joshi</td>
+                            <td>IC2023003</td>
+                            <td>B.Tech (CSE)</td>
+                            <td>5 / 5 / 5</td>
+                            <td>5 / 4 / 5</td>
+                            <td>4 / 4 / 4</td>
+                            <td>4 / 4 / 4</td>
+                            <td>3 / 3 / 3</td>
+                            <td>Overall very good.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">© <span id="yearFooter3"></span> Imperial College of Engineering</div>
+    </footer>
+
+    <script>
+        document.getElementById('yearFooter3').innerText = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
