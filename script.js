@@ -65,29 +65,3 @@
   });
 })();
 
-
-(function theme() {
-  const themeToggle = document.getElementById("theme-toggle");
-  const icon = themeToggle.querySelector(".icon");
-  const body = document.body;
-
-  // Load saved mode
-  if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark-mode");
-    icon.textContent = "☀️";
-  }
-
-  // Toggle theme
-  themeToggle.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-
-    if (body.classList.contains("dark-mode")) {
-      icon.textContent = "☀️";
-      localStorage.setItem("theme", "dark");
-    } else {
-      icon.textContent = "🌙";
-      localStorage.setItem("theme", "light");
-    }
-  });
-})()
-
