@@ -16,10 +16,14 @@
                 <div class="subtitle">Online Feedback System</div>
             </div>
             <nav class="main-nav">
-                <a href="index.html" class="nav-link">Feedback</a>
-                <a href="admin.html" class="nav-link active">Admin</a>
+                <a class="nav-link" href="01_index.html">Home</a>
+                <a class="nav-link" href="02_feedbackForm.html">Give Feedback</a>
+                <a class="nav-link active" href="03_admin.html">Admin</a>
+                <a class="nav-link" href="#">Contact</a>
             </nav>
         </div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">☀️</button>
+
     </header>
 
     <main class="container main-area small">
@@ -52,12 +56,12 @@
         document.getElementById('yearFooter2').innerText = new Date().getFullYear();
         document.getElementById('adminLogin').addEventListener('submit', function (e) {
             e.preventDefault();
-            // Mock login — redirect to static report page
-            window.location.href = 'feedbacks.html';
+
+            window.location.href = '04_feedbackData.html';
         });
     </script>
 
-    <script src="script.js"></script>
+    <script src="theme.js"></script>
 </body>
 
 </html>
