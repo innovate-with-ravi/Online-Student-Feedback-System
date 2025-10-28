@@ -1,4 +1,4 @@
-/* style.css - Blue & white academic theme, modern card style */
+/* syle.css - Blue & white academic theme, modern card style */
 :root {
     --bg: #f6f8fb;
     --card: #ffffff;
@@ -160,6 +160,7 @@ body {
 .grid {
     display: grid;
     gap: 12px;
+    align-items: center;
 }
 
 .two-col {
@@ -284,7 +285,7 @@ body {
     margin: 0 auto;
 }
 
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
     .three-col {
         grid-template-columns: 1fr;
     }
@@ -304,7 +305,7 @@ body {
         display: flex;
         gap: 8px;
     }
-}
+} */
 
 body.dark-mode {
     --bg: #0d1117;
@@ -336,10 +337,6 @@ body.dark-mode * {
 
 /* theme toggle button stylings */
 .theme-toggle {
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
-
     width: 55px;
     height: 30px;
     border-radius: 50px;
@@ -509,4 +506,91 @@ footer {
 
 /* ---------------------- */
 /* HOMEPAGE STYLING END   */
+/* ---------------------- */
+
+
+/* ---------------------- */
+/* RESPONSIVE DESIGN      */
+/* ---------------------- */
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 6px 0;
+        font-size: 15px;
+    }
+
+    .home-banner {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .login-card {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .form-group input,
+    .form-group select {
+        font-size: 14px;
+    }
+
+    .action-buttons button {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    footer {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+
+/* phone */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 18px;
+    }
+
+    .main-nav a {
+        font-size: 14px;
+    }
+
+    .home-banner h2 {
+        font-size: 18px;
+    }
+
+    .home-banner p {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+
+/* ---------------------- */
+/* END RESPONSIVE DESIGN  */
 /* ---------------------- */

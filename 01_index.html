@@ -9,13 +9,17 @@
     <script>
         function fakeLogin() {
             const username = document.getElementById("username").value.trim();
-            const sem = document.getElementById("role").value;
+            const sem = document.getElementById("sem").value;
 
-            if (username === "" || role === "") {
+            if (username === "" || sem === "") {
                 alert("Please enter your name and select your semester.");
                 return;
             }
-            createSubCards();
+
+            // Save data temporarily
+            localStorage.setItem("username", username);
+            localStorage.setItem("semester", sem);
+            
             window.location.href = "02_feedbackForm.html"
         }
     </script>
@@ -34,8 +38,8 @@
                 <a class="nav-link" href="03_admin.html">Admin</a>
                 <a class="nav-link" href="#">Contact</a>
             </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">☀️</button>
         </div>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">☀️</button>
 
     </header>
 
@@ -53,8 +57,8 @@
             </div>
 
             <div class="form-group">
-                <label for="role">Select Semester:</label>
-                <select id="role" class="selectSem">
+                <label for="sem">Select Semester:</label>
+                <select id="sem" class="selectSem">
                     <option value="">-------------</option>
                     <option value="Sem1">Sem1</option>
                     <option value="Sem2">Sem2</option>
@@ -74,7 +78,6 @@
     </footer>
 
     <script src="theme.js"></script>
-    <script src="subjects.js"></script>
 </body>
 
 </html>

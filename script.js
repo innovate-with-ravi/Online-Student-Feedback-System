@@ -5,14 +5,19 @@
 
   if (yearFooter) yearFooter.innerText = new Date().getFullYear();
 
+  /* 
+  /\S+@\S+\.\S+/ — this is a regular expression (regex).
+  test(email) — this method checks whether the given string (email) matches the pattern.
+
+  \S+ = one or more non-space characters
+  */
   function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
-  if (!form) return;
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
+  form.addEventListener("submit", function (e) {
+    /*Stop doing the default thing (like refreshing or navigating). Let me handle the form with my own JavaScript.*/
+    e.preventDefault();// stop auto-refresh
 
     // quick required checks for basic fields
     const studentName = form.querySelector('[name="studentName"]').value.trim();
@@ -33,8 +38,9 @@
     }
 
     // verify all subject-selects
+    /* need to put all subjects selects*/
     const selects = [
-      'os_explain', 'os_completion', 'os_punctuality',
+      'Communication Skills_explain', 'Communication Skills_completions', 'Communication Skills_punctuality',
       'db_explain', 'db_completion', 'db_punctuality',
       'ai_explain', 'ai_completion', 'ai_punctuality',
       'ml_explain', 'ml_completion', 'ml_punctuality',
@@ -42,17 +48,13 @@
     ];
 
     for (let name of selects) {
-      const el = form.querySelector([name = "${name}"]);
-      if (!el) {
-        alert('Form structure error: missing field ' + name);
-        return;
-      }
+      const el = form.querySelector(`[name = "${name}"]`);
       const val = el.value;
       if (!val) {
         alert('Please provide ratings for all subjects (1-5).');
         return;
       }
-      const v = Number(val);
+      const v = parseInt(val);
       if (!(v >= 1 && v <= 5)) {
         alert('Ratings must be between 1 and 5.');
         return;

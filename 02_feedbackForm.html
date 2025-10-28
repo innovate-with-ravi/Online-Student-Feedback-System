@@ -23,8 +23,8 @@
                 <a class="nav-link" href="03_admin.html">Admin</a>
                 <a class="nav-link" href="#">Contact</a>
             </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">☀️</button>
         </div>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">☀️</button>
 
     </header>
 
@@ -33,7 +33,8 @@
             <h2 class="card-title">Student Feedback Form</h2>
             <p class="muted">Please provide honest feedback for the subjects listed below. All fields are required.</p>
 
-            <form id="feedbackForm" novalidate>
+            <!-- novalidate => don't validate by default -->
+            <form id="feedbackForm" novalidate action="#">
                 <div class="grid two-col">
                     <div class="form-group">
                         <label for="studentName">Student Name</label>
@@ -59,193 +60,8 @@
                     <input type="text" id="course" name="course" value="B.Tech (CSE)" required />
                 </div>
 
-                <!-- Subjects -->
-                <div class="subjects">
-                    <!-- OS -->
-                    <div class="subject-card">
-                        <h3>Operating Systems (OS) <span class="faculty">- Dr Anand Mohan</span></h3>
-                        <div class="grid three-col params">
-                            <label>Ability to explain
-                                <select name="os_explain" required>
-                                    <option value="">Select</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </label>
-                            <label>Timely completion
-                                <select name="os_completion" required>
-                                    <option value="">Select</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </label>
-                            <label>Punctuality
-                                <select name="os_punctuality" required>
-                                    <option value="">Select</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- DBMS -->
-                    <div class="subject-card">
-                        <h3>DBMS <span class="faculty">- Mr Amit Mehta</span></h3>
-                        <div class="grid three-col params">
-                            <label>Ability to explain
-                                <select name="db_explain" required>
-                                    <option value="">Select</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </label>
-                            <label>Timely completion
-                                <select name="db_completion" required>
-                                    <option value="">Select</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </label>
-                            <label>Punctuality
-                                <select name="db_punctuality" required>
-                                    <option value="">Select</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- AI -->
-                    <div class="subject-card">
-                        <h3>AI <span class="faculty">- Mr Jensen H.</span></h3>
-                        <div class="grid three-col params">
-                            <label>Ability to explain
-                                <select name="ai_explain" required>
-                                    <option value="">Select</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </label>
-                            <label>Timely completion
-                                <select name="ai_completion" required>
-                                    <option value="">Select</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </label>
-                            <label>Punctuality
-                                <select name="ai_punctuality" required>
-                                    <option value="">Select</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- ML -->
-                    <div class="subject-card">
-                        <h3>ML <span class="faculty">- Dr Sam Altman</span></h3>
-                        <div class="grid three-col params">
-                            <label>Ability to explain
-                                <select name="ml_explain" required>
-                                    <option value="">Select</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </label>
-                            <label>Timely completion
-                                <select name="ml_completion" required>
-                                    <option value="">Select</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </label>
-                            <label>Punctuality
-                                <select name="ml_punctuality" required>
-                                    <option value="">Select</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Math -->
-                    <div class="subject-card">
-                        <h3>Math <span class="faculty">- Dr RD Sharma</span></h3>
-                        <div class="grid three-col params">
-                            <label>Ability to explain
-                                <select name="math_explain" required>
-                                    <option value="">Select</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </label>
-                            <label>Timely completion
-                                <select name="math_completion" required>
-                                    <option value="">Select</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </label>
-                            <label>Punctuality
-                                <select name="math_punctuality" required>
-                                    <option value="">Select</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </label>
-                        </div>
-                    </div>
-                </div>
+                <!-- Subjects => automatically gets add on page load-->
+                <div class="subjects"></div>
 
                 <div class="form-group full">
                     <label for="comments">Overall Comments / Suggestions</label>
