@@ -54,11 +54,40 @@
 
     <script>
         document.getElementById('yearFooter2').innerText = new Date().getFullYear();
-        document.getElementById('adminLogin').addEventListener('submit', function (e) {
-            e.preventDefault();
 
-            window.location.href = '04_feedbackData.html';
-        });
+        (function validateLogin() {
+
+            function isValidEmail(email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+
+            document.getElementById('adminLogin').addEventListener('submit', function (e) {
+                e.preventDefault(); // Stop the form from submitting
+
+                const username = document.getElementById('username').value.trim();
+                const password = document.getElementById('password').value.trim();
+
+                if (!username || !password) {
+                    alert('Please fill in both username and password.');
+                    return;
+                }
+
+                if (!isValidEmail(username)) {
+                    alert('Please enter a valid email address for the username.');
+                    return;
+                }
+
+                // 4. --- "Fake Backend" Check ---
+                const MOCK_ADMIN_EMAIL = 'raviggbhawsar9090@gmail.com';
+                const MOCK_ADMIN_PASS = 'admin123';
+
+                if (username === MOCK_ADMIN_EMAIL && password === MOCK_ADMIN_PASS) {
+                    window.location.href = '04_feedbackData.html';
+                } else {
+                    alert('Invalid credentials. Please try again.');
+                }
+            });
+        })();
     </script>
 
     <script src="theme.js"></script>

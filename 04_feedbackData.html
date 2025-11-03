@@ -91,10 +91,32 @@
     </footer>
 
     <script>
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark-mode");
+        }
         document.getElementById('yearFooter3').innerText = new Date().getFullYear();
+
+
+        let feedbackData = JSON.parse(localStorage.getItem("feedbackData"));
+        let tbody = document.querySelector("tbody")
+
+        for (const feedback of feedbackData) {
+            let data = document.createElement("tr");
+            data.innerHTML = `<td>${feedback[0]}</td>
+                            <td>${feedback[1]}</td>
+                            <td>${feedback[2]}</td>
+                            <td>${feedback[3]}</td>
+                            <td>${feedback[4][0]}</td>
+                            <td>${feedback[4][1]}</td>
+                            <td>${feedback[4][2]}</td>
+                            <td>${feedback[4][3]}</td>
+                            <td>${feedback[4][4]}</td>
+                            <td>${feedback[5]}.</td>`;
+
+            tbody.append(data);
+        }
     </script>
 
-    <script src="theme.js"></script>
 </body>
 
 </html>

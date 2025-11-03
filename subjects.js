@@ -15,10 +15,17 @@ window.addEventListener("DOMContentLoaded", () => {
 let semSubData = {
     Sem1: [
         { subject: "Communication Skills", faculty: "Mrs. Grishma Ptel" },
-        { subject: "Communication Skills", faculty: "Mrs. Grishma Ptel" },
-        { subject: "Communication Skills", faculty: "Mrs. Grishma Ptel" },
-        { subject: "Communication Skills", faculty: "Mrs. Grishma Ptel" },
-        { subject: "Communication Skills", faculty: "Mrs. Grishma Ptel" }
+        { subject: "MathI", faculty: "Mrs. Bharti Patidar" },
+        { subject: "Digital Electronics", faculty: "Mr. Xyz" },
+        { subject: "Fundamentals of Computer", faculty: "Mr. Pradeep Jatav" },
+        { subject: "C Programming", faculty: "Mr. Rajesh Verma" }
+    ],
+    Sem2: [
+        { subject: "MathII", faculty: "Mr. Dembla" },
+        { subject: "DCO", faculty: "Mr. Jayesh Yadav" },
+        { subject: "Digital Electronics", faculty: "Mr. Xyz" },
+        { subject: "Fundamentals of Computer", faculty: "Mr. Pradeep Jatav" },
+        { subject: "C Programming", faculty: "Mr. Rajesh Verma" }
     ]
 }
 
@@ -39,7 +46,7 @@ function createSubCards(sub) {
                                 </select>
                             </label>
                             <label>Timely completion
-                                <select ${sub.subject + "_completion"} required>
+                                <select name = "${sub.subject + "_completion"}" required>
                                     <option value="">Select</option>
                                     <option>1</option>
                                     <option>2</option>
