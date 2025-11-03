@@ -34,6 +34,10 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+.collapse {
+    display: collapse;
+}
+
 .container {
     width: 92%;
     max-width: var(--maxw);
@@ -522,12 +526,6 @@ footer {
     .header-inner {
         flex-direction: column;
         text-align: center;
-    }
-
-    .main-nav {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px 0;
     }
 
     .main-nav a {
