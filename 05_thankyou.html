@@ -5,67 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Submitted</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f7f6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            padding: 40px;
-            text-align: center;
-            max-width: 450px;
-            width: 90%;
-        }
-
-        h1 {
-            color: #2a9d8f;
-            /* A nice "success" green */
-            font-size: 2.5rem;
-            margin-top: 0;
-        }
-
-        p {
-            color: #555;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .home-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 24px;
-            background-color: #264653;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .home-link:hover {
-            background-color: #2a9d8f;
-        }
-    </style>
+    <!-- Link the one, production-ready CSS file -->
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>Thank You!</h1>
-        <p>Your feedback for has been submitted successfully.</p>
-        <p>We value your input and will use it to improve experience for future students.</p>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand-wrap">
+                <h1 class="brand">Imperial College of Engineering</h1>
+                <div class="subtitle">Online Feedback System</div>
+            </div>
+            <nav class="main-nav">
+                <!-- Set "Home" as active, "Give Feedback" is gone -->
+                <a class="nav-link active" href="index.html">Home</a>
+                <a class="nav-link" href="03_admin.html">Admin</a>
+                <a class="nav-link" href="#">Contact</a> <!-- Placeholder -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">☀️</button>
+            </nav>
+        </div>
+    </header>
 
-    </div>
+    <!-- Use the main layout classes -->
+    <main class="container main-area">
+        <!-- Added 'thank-you-card' class for special styling -->
+        <section class="card thank-you-card">
+            <h1>Thank You!</h1>
+            <!-- Added an ID here so our JS can make the message dynamic -->
+            <p id="thank-you-message">Your feedback has been submitted successfully.</p>
+            <p>We value your input and will use it to improve the experience for future students.</p>
+            <a href="index.html" class="btn primary">Back to Home</a>
+        </section>
+    </main>
 
+    <!-- Standard footer -->
+    <footer>
+        <div class="container">© <span id="yearFooter"></span> Imperial College of Engineering</div>
+    </footer>
+
+    <!-- Link the one, production-ready JS file -->
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>

@@ -5,7 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Feedback Report - Imperial College</title>
-    <link rel="stylesheet" href="style.css" />
+    <!-- Corrected CSS Path -->
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
@@ -16,107 +17,51 @@
                 <div class="subtitle">Online Feedback System</div>
             </div>
             <nav class="main-nav">
-                <a href="02_feedbackForm.html" class="nav-link">Feedback</a>
-                <a href="03_admin.html" class="nav-link">Admin</a>
+                <!-- Fixed Nav: Added Home, Logout, and Theme Toggle -->
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link active" href="03_admin.html">Admin</a>
+                <a class="nav-link" href="about.html">Contact</a>
+                <button class="btn ghost" id="admin-logout" style="color: white; border-color: white; margin-right: 10px;">Logout</button>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">☀️</button>
             </nav>
         </div>
     </header>
 
     <main class="container main-area">
         <section class="card">
-            <h2 class="card-title">Feedback Report (Dummy Data)</h2>
-            <p class="muted">This page shows sample feedback entries for the admin panel mockup.</p>
+            <h2 class="card-title">Feedback Report</h2>
+            <p class="muted">This page shows all student feedback submitted to the system.</p>
 
             <div class="table-wrap">
                 <table class="datatable">
+                    <!-- This table structure is now dynamic -->
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Student</th>
                             <th>Enroll</th>
                             <th>Course</th>
-                            <th>OS (E/C/P)</th>
-                            <th>DBMS (E/C/P)</th>
-                            <th>AI (E/C/P)</th>
-                            <th>ML (E/C/P)</th>
-                            <th>Math (E/C/P)</th>
+                            <!-- This one column will hold all subjects/scores -->
+                            <th>Feedback Details (Explain / Complete / Punctual)</th>
                             <th>Comments</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Aarti Singh</td>
-                            <td>IC2023001</td>
-                            <td>B.Tech (CSE)</td>
-                            <td>4 / 4 / 5</td>
-                            <td>3 / 3 / 4</td>
-                            <td>4 / 4 / 4</td>
-                            <td>5 / 5 / 5</td>
-                            <td>4 / 4 / 4</td>
-                            <td>Good mix of theory and practical.</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Ravi Kumar</td>
-                            <td>IC2023002</td>
-                            <td>B.Tech (CSE)</td>
-                            <td>3 / 3 / 3</td>
-                            <td>4 / 4 / 3</td>
-                            <td>2 / 2 / 3</td>
-                            <td>3 / 3 / 2</td>
-                            <td>4 / 4 / 5</td>
-                            <td>Need more assignments in AI.</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Meera Joshi</td>
-                            <td>IC2023003</td>
-                            <td>B.Tech (CSE)</td>
-                            <td>5 / 5 / 5</td>
-                            <td>5 / 4 / 5</td>
-                            <td>4 / 4 / 4</td>
-                            <td>4 / 4 / 4</td>
-                            <td>3 / 3 / 3</td>
-                            <td>Overall very good.</td>
-                        </tr>
+                    <!-- This 'tbody' will be filled by our JavaScript -->
+                    <tbody id="data-table-body">
+                        <!-- Empty: JavaScript will add rows here -->
                     </tbody>
                 </table>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">© <span id="yearFooter3"></span> Imperial College of Engineering</div>
+    <!-- Fixed footer and ID -->
+    <footer>
+        <div class="container">© <span id="yearFooter"></span> Imperial College of Engineering</div>
     </footer>
 
-    <script>
-        if (localStorage.getItem("theme") === "dark") {
-            document.body.classList.add("dark-mode");
-        }
-        document.getElementById('yearFooter3').innerText = new Date().getFullYear();
-
-
-        let feedbackData = JSON.parse(localStorage.getItem("feedbackData"));
-        let tbody = document.querySelector("tbody")
-
-        for (const feedback of feedbackData) {
-            let data = document.createElement("tr");
-            data.innerHTML = `<td>${feedback[0]}</td>
-                            <td>${feedback[1]}</td>
-                            <td>${feedback[2]}</td>
-                            <td>${feedback[3]}</td>
-                            <td>${feedback[4][0]}</td>
-                            <td>${feedback[4][1]}</td>
-                            <td>${feedback[4][2]}</td>
-                            <td>${feedback[4][3]}</td>
-                            <td>${feedback[4][4]}</td>
-                            <td>${feedback[5]}.</td>`;
-
-            tbody.append(data);
-        }
-    </script>
-
+    <!-- Single script file -->
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>

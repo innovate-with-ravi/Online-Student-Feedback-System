@@ -4,43 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home | Online Student Feedback System</title>
-    <link rel="stylesheet" href="style.css" />
-    <script>
-        function fakeLogin() {
-            // "Fake backend" database of registered student emails
-            const fakeEmailDB = {
-                "raviggbhawsar9090@gmail.com": true,
-                "ravi.kumar@imperial.com": true,
-                "meera.joshi@imperial.com": true,
-                "student@imperial.com": true,
-                "test.user@imperial.com": true
-            };
-
-            const username = document.getElementById("username").value.trim();
-            const email = document.getElementById("email").value.trim(); // Get email
-            const sem = document.getElementById("sem").value;
-
-            // 1. Check for empty fields
-            if (username === "" || email === "" || sem === "") {
-                alert("Please enter your name, email, and select your semester.");
-                return;
-            }
-
-            // 2. Check against the "fake backend" email list
-            if (!fakeEmailDB[email]) {
-                alert("Email not found. Please use your registered college email.\n\n(Hint: Try 'student@imperial.com')");
-                return;
-            }
-
-            // All checks passed! Save data and redirect.
-            localStorage.setItem("username", username);
-            localStorage.setItem("email", email); // Save email
-            localStorage.setItem("semester", sem);
-
-            window.location.href = "02_feedbackForm.html"
-        }
-    </script>
+    <title>Online Student Feedback System</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
@@ -53,12 +18,11 @@
             <nav class="main-nav">
                 <a class="nav-link active" href="index.html">Home</a>
                 <a class="nav-link" href="03_admin.html">Admin</a>
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="about.html">Contact</a>
 
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">☀️</button>
             </nav>
         </div>
-
     </header>
 
     <main>
@@ -67,22 +31,22 @@
             <p>Submit your feedback on courses and faculty.</p>
         </section>
 
-        <section class="login-card">
+        <form class="login-card" id="login-form">
             <h3>Login</h3>
             <div class="form-group">
                 <label for="username">Name:</label>
-                <input type="text" id="username" placeholder="Enter your name" />
+                <input type="text" id="username" placeholder="Enter your name" required />
             </div>
 
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" placeholder="Enter your registered email" />
+                <input type="email" id="email" placeholder="Enter your registered email" required />
             </div>
 
             <div class="form-group">
                 <label for="sem">Select Semester:</label>
-                <select id="sem" class="selectSem">
-                    <option value="">-------------</option>
+                <select id="sem" class="selectSem" required>
+                    <option value="" disabled selected>Select your semester</option>
                     <option value="Sem1">Sem1</option>
                     <option value="Sem2">Sem2</option>
                     <option value="Sem3">Sem3</option>
@@ -92,15 +56,15 @@
                 </select>
             </div>
 
-            <button onclick="fakeLogin() ">Give Feedback</button>
-        </section>
+            <button type="submit">Give Feedback</button>
+        </form>
     </main>
 
     <footer>
         <p>Online Student Feedback System © Imperial College of Engineering</p>
     </footer>
 
-    <script src="theme.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>

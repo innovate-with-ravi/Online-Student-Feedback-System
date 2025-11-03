@@ -4,13 +4,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Online Student Feedback System - Imperial College of Engineering</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Give Feedback | Online Student Feedback System</title>
+    <!-- Corrected path to the single CSS file -->
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=dark_mode" />
 </head>
 
-<body style="min-height: fit-content;">
+<!-- Removed inline 'style' tag. We'll move this to style.css -->
+<body>
     <header class="site-header">
         <div class="container header-inner">
             <div class="brand-wrap">
@@ -18,14 +20,15 @@
                 <div class="subtitle">Online Feedback System</div>
             </div>
             <nav class="main-nav">
-                <a class="nav-link active" href="index.html">Home</a>
+                <!-- Fixed the active link and paths -->
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link active" href="02_feedbackForm.html">Give Feedback</a>
                 <a class="nav-link" href="03_admin.html">Admin</a>
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="about.html">Contact</a>
 
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">☀️</button>
             </nav>
         </div>
-
     </header>
 
     <main class="container main-area">
@@ -33,7 +36,7 @@
             <h2 class="card-title">Student Feedback Form</h2>
             <p class="muted">Please provide honest feedback for the subjects listed below. All fields are required.</p>
 
-            <!-- novalidate => don't validate by default -->
+            <!-- 'novalidate' is correct, as we'll use JS for validation -->
             <form id="feedbackForm" novalidate action="#">
                 <div class="grid two-col">
                     <div class="form-group">
@@ -60,8 +63,8 @@
                     <input type="text" id="course" name="course" value="B.Tech (CSE)" required />
                 </div>
 
-                <!-- Subjects => automatically gets add on page load-->
-                <div class="subjects"></div>
+                <!-- This container will be populated by your 'subjects.js' logic -->
+                <div class.="subjects" id="subjects-container"></div>
 
                 <div class="form-group full">
                     <label for="comments">Overall Comments / Suggestions</label>
@@ -76,14 +79,14 @@
         </section>
     </main>
 
-    <footer class="site-footer">
+    <!-- Changed class 'site-footer' to just 'footer' to match our CSS -->
+    <footer>
         <div class="container">© <span id="yearFooter"></span> Imperial College of Engineering — Student Feedback System
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script src="theme.js"></script>
-    <script src="subjects.js"></script>
+    <!-- All script logic is now in this one file -->
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>

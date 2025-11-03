@@ -5,10 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Admin Login - Imperial College</title>
-    <link rel="stylesheet" href="style.css" />
+    <!-- Corrected path -->
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body style="min-height: fit-content;">
+<!-- Removed inline 'style' tag. Our CSS file handles this. -->
+<body>
     <header class="site-header">
         <div class="container header-inner">
             <div class="brand-wrap">
@@ -16,25 +18,27 @@
                 <div class="subtitle">Online Feedback System</div>
             </div>
             <nav class="main-nav">
-                <a class="nav-link active" href="index.html">Home</a>
-                <a class="nav-link" href="03_admin.html">Admin</a>
-                <a class="nav-link" href="#">Contact</a>
+                <!-- Removed "Give Feedback" as requested -->
+                <a class="nav-link" href="index.html">Home</a>
+                <!-- Set "Admin" as the active link for this page -->
+                <a class="nav-link active" href="03_admin.html">Admin</a>
+                <a class="nav-link" href="about.html">Contact</a>
 
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">☀️</button>
             </nav>
         </div>
-
     </header>
 
     <main class="container main-area small">
         <section class="card">
             <h2 class="card-title">Admin Login (Mock)</h2>
-            <p class="muted">This is a static mockup. Use any credentials to proceed to the feedback report.</p>
+            <p class="muted">This is a static mockup. Use 'raviggbhawsar9090@gmail.com' and 'admin123'.</p>
 
+            <!-- 'adminLogin' is the ID our script will look for -->
             <form id="adminLogin" novalidate>
                 <div class="form-group">
-                    <label for="username">Username</label>
-                    <input id="username" type="text" required />
+                    <label for="username">Username (Email)</label>
+                    <input id="username" type="email" required />
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
@@ -48,49 +52,13 @@
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">© <span id="yearFooter2"></span> Imperial College of Engineering</div>
+    <!-- Changed class to 'footer' and fixed the span ID -->
+    <footer>
+        <div class="container">© <span id="yearFooter"></span> Imperial College of Engineering</div>
     </footer>
 
-    <script>
-        document.getElementById('yearFooter2').innerText = new Date().getFullYear();
-
-        (function validateLogin() {
-
-            function isValidEmail(email) {
-                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-            }
-
-            document.getElementById('adminLogin').addEventListener('submit', function (e) {
-                e.preventDefault(); // Stop the form from submitting
-
-                const username = document.getElementById('username').value.trim();
-                const password = document.getElementById('password').value.trim();
-
-                if (!username || !password) {
-                    alert('Please fill in both username and password.');
-                    return;
-                }
-
-                if (!isValidEmail(username)) {
-                    alert('Please enter a valid email address for the username.');
-                    return;
-                }
-
-                // 4. --- "Fake Backend" Check ---
-                const MOCK_ADMIN_EMAIL = 'raviggbhawsar9090@gmail.com';
-                const MOCK_ADMIN_PASS = 'admin123';
-
-                if (username === MOCK_ADMIN_EMAIL && password === MOCK_ADMIN_PASS) {
-                    window.location.href = '04_feedbackData.html';
-                } else {
-                    alert('Invalid credentials. Please try again.');
-                }
-            });
-        })();
-    </script>
-
-    <script src="theme.js"></script>
+    <!-- Only one script file is needed -->
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>
